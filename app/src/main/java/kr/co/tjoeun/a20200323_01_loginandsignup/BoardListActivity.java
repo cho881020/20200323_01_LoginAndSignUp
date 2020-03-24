@@ -36,23 +36,8 @@ public class BoardListActivity extends BaseActivity {
     }
 
     @Override
-    public void setupEvents() {
-
-        binding.postBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext, EditBlackActivity.class);
-                startActivity(intent);
-            }
-        });
-
-    }
-
-    @Override
-    public void setValues() {
-
-        blackAdapter = new BlackAdapter(mContext, R.layout.black_list_item, blacks);
-        binding.postListView.setAdapter(blackAdapter);
+    protected void onResume() {
+        super.onResume();
 
         ServerUtil.getRequestBlackList(mContext, new ServerUtil.JsonResponseHandler() {
             @Override
@@ -96,6 +81,28 @@ public class BoardListActivity extends BaseActivity {
 
             }
         });
+    }
+
+    @Override
+    public void setupEvents() {
+
+        binding.postBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, EditBlackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    @Override
+    public void setValues() {
+
+        blackAdapter = new BlackAdapter(mContext, R.layout.black_list_item, blacks);
+        binding.postListView.setAdapter(blackAdapter);
+
+
 
     }
 }
