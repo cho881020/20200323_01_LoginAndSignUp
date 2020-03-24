@@ -22,5 +22,10 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void setValues() {
 
+//        토큰이 저장되어 있고 & 자동로그인이 체크되어 있다면
+//         => 메인액티비티로 이동.
+
+//        그렇지 않다면 => 로그인액티비티로 이동.
+
     }
 }
