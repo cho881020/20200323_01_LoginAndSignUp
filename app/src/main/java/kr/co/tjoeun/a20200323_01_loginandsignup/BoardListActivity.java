@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import kr.co.tjoeun.a20200323_01_loginandsignup.databinding.ActivityBoardListBinding;
+import kr.co.tjoeun.a20200323_01_loginandsignup.utils.ServerUtil;
 
 public class BoardListActivity extends BaseActivity {
 
@@ -26,6 +27,8 @@ public class BoardListActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+        ServerUtil.getreq
 
     }
 }
