@@ -67,7 +67,13 @@ public class BoardListActivity extends BaseActivity {
                         }
 
 //                        모두 담긴 게시글들 => 어댑터가 새로고침.
-                        blackAdapter.notifyDataSetChanged();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                blackAdapter.notifyDataSetChanged();
+                            }
+                        });
+
 
 
 
